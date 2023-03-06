@@ -6,12 +6,19 @@
   const incrementCounter = () => {
     count += 1;
   }
+
+  const handleInput = (event) => {
+    name = event.target.value
+  }
+
+  console.log('rendered')
 </script>
 
 <main>
   <h1>Hello {name}</h1>
   <h2>counter: {count}</h2>
   <button on:click={incrementCounter}>increment</button>
+  <input type="text" on:input={handleInput} bind:value={name} />
   <img src={src} alt="svelte" />
 </main>
 
